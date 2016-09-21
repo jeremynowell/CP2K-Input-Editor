@@ -1,0 +1,45 @@
+<!--
+ Copyright (c) 2016 The University of Edinburgh.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+        <div class="well">
+            <h3 style="padding-bottom: 20px;">CP2K Input Editor</h3>
+        </div>
+        <p>This application is for preparing CP2K input files. It
+            presents the CP2K input sections and their parameters as a tree
+            which may be expanded as desired in order to fill in the different
+            sections. Once a tree has been prepared a CP2K input file may be
+            generated. Existing CP2K input files my be imported for
+            further editing.
+        </p>
+        <p>Inputs may be generated for different versions of CP2K:
+        </p>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="template-select" class="col-sm-2 control-label">CP2K version:</label>
+                <div class="col-sm-8">
+                    <select ng-model="vm.version"
+                            ng-options="v as v.label for v in vm.versions track by v.templateId"
+                            class="form-control" id="template-select">
+                    </select>
+                </div>
+                <a href="#/edit" id="template-select-btn" class="btn btn-success">Edit</a>
+            </div>
+        </form>
+    </div>
+</div>

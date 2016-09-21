@@ -1,0 +1,53 @@
+<!--
+ Copyright (c) 2016 The University of Edinburgh.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$hide()">
+                    <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Load input file</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="btn btn-primary btn-file">
+                            <i class="fa fa-folder-open-o fa-lg" aria-hidden="true"></i>
+                            &nbsp;Browse&hellip;
+                            <input type="file" file-model="vm.cp2kInputFile">
+                        </span>
+                    </span>
+                    <input type="text" class="form-control" readonly ng-model="vm.cp2kInputFile.name">
+                </div>
+                <loading></loading>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success"
+                        ng-click="vm.uploadInputFile(); loading = !loading"
+                        ng-disabled="!vm.cp2kInputFile || loading">
+                    <i class="fa fa-upload fa-lg" aria-hidden="true"></i>
+                    <span ng-hide="loading">&nbsp;Upload</span>
+                    <span ng-show="loading">&nbsp;Loading&hellip;</span>
+                </button>
+                <button type="button" class="btn btn-danger" ng-click="$hide()">
+                    <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+                    &nbsp;Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<!--
+ Copyright (c) 2016 The University of Edinburgh.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+        <h1>Help</h1>
+        <h3>Introduction</h3>
+        <p>
+            The CP2K Input Editor is designed to aid in the preparation of
+            CP2K input files. The sections in the input file and their
+            parameters are presented as a tree which may be expanded in
+            order to fill in the different sections and subsections.
+            Once a valid input tree has been prepared a CP2K input file may be
+            generated. Existing CP2K input files my be imported for
+            further editing, or one of the pre-existing templates may be
+            used as a starting point.
+        </p>
+        <h3>Selecting a CP2K Version</h3>
+        Editors are available for multiple CP2K versions. Click on the home
+        page to select the appropriate version for editing.
+        <h3>Editing the Input Tree</h3>
+        <h4>Section and Parameter Activation</h4>
+        <p>
+            All sections and parameters in the CP2K input are treated as
+            optional. To activate a section or parameter click the activation
+            toggle next to its name <i class="enable_button"></i>.
+            When a section or subsection is activated
+            it will automatically expand. Active section names are shown in
+            green and active parameters in blue. To deactivate an section
+            or parameter click the <i class="disable_button"></i> toggle icon again.
+        </p>
+        <p>
+            All inactive sections and subsections may be shown or hidden at
+            once by clicking the icons in the top right of the tree.
+        </p>
+        <h4>Tree Expansion</h4>
+        <p>
+            To expand or close a section of the input tree click on its name. Activation
+            of a section automatically expands that section. The tree may be
+            completely expanded or closed by using the controls in the top
+            right of the tree.
+        </p>
+        <h4>Editing of Parameters</h4>
+        <p>
+            Once a parameter has been activated it may be edited. If a parameter
+            is defined as a list of options then its value may only be selected from
+            this list. Otherwise, free text may be entered into the input box.
+            Some validation of the input is performed, for instance to check that
+            a value is a number or an integer. If text is invalid then this will
+            be shown with a red cross and a help icon will appear with an
+            indication of the problem.
+        </p>
+        <p>
+            Help on a parameter may be obtained by hovering over the
+            parameter name. The text which appears is the same as that contained
+            in the CP2K online manual.
+        </p>
+        <p>
+            If a parameter is not defined then typcially CP2K will use the
+            default value for it.
+        </p>
+        <h4>Repeating a Section or Parameter</h4>
+        Some sections or parameters may be specified multiple times in a
+        CP2K input file. These are shown with a
+        <i class="repeat_button repeat_button_add"></i>
+        repeat icon next to their name. Clicking this icon will add a copy
+        of that parameter to the tree. Copies may be removed by clicking the
+        <i class="repeat_button repeat_button_remove"></i> remove icon.
+        <h3>Preparation of CP2K Input File</h3>
+        <p>
+            When a valid CP2K input tree has been prepared then a file
+            suitable for use with CP2K may be created. Click the "Export
+            CP2K Input File" button and a dialogue box will be displayed.
+            Once the file is created you will be prompted to save it. The
+            default name is "cp2k.inp", which may be changed as desired.
+            (The behaviour of the download process is browser dependent, some
+            browsers may automatically save the file in the Download location
+            without further prompting from the user.)
+        </p>
+        <h3>Import an Existing Input File</h3>
+        <p>
+            To load an existing CP2K file from your computer click the
+            "Load CP2K input file" button. A dialogue will appear which
+            will allow you to browse your computer for the file and then
+            upload it. Once uploaded the tree will be expanded to show
+            those sections which are active in the file.
+        </p>
+        <h3>Editing a pre-existing template</h3>
+        <p>
+            Several templates are available which represent common CP2K
+            scenarios. These are listed on the left-hand side of the editor
+            under "Input Templates". Clicking one of these templates will
+            load it into the editor for modification as desired. (Note that
+            doing this will overwrite any changes made in the editor.)
+        </p>
+    </div>
+</div>

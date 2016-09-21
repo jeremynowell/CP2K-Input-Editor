@@ -1,0 +1,55 @@
+<!--
+ Copyright (c) 2016 The University of Edinburgh.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$hide()">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Generate CP2K Input File</h4>
+            </div>
+            <div class="modal-body">
+                <div ng-hide="vm.generatingInputFile||vm.generatedInputFile">
+                    <h5>Are you sure you want to generate an input file with
+                        the current settings?</h5>
+                </div>
+                <div class="loading" ng-show="vm.generatingInputFile">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                    <span>Generating input file...</span>
+                </div>
+                <div ng-show="vm.generatedInputFile">
+                    <span>Input file generated successfully</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success"
+                        ng-click="vm.generateInputFile()"
+                        ng-hide="vm.generatedInputFile"
+                        ng-disabled="vm.generatingInputFile">
+                    <i class="fa fa-check fa-lg" aria-hidden="true"></i>
+                    &nbsp;OK
+                </button>
+                <input-file-download></input-file-download>
+                <button type="button" class="btn btn-danger" ng-click="$hide()">
+                    <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+                    &nbsp;Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
