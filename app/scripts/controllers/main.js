@@ -38,7 +38,7 @@
         vm.version = versionDataService.getSelectedVersion();
 
         // When the version changes emit an event
-        $scope.$watch("vm.version", function() {
+        $scope.$watch('vm.version', function() {
             versionDataService.setSelectedVersion(vm.version);
             $scope.$emit('versionChanged');
         });
